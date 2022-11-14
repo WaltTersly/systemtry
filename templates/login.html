@@ -1,0 +1,21 @@
+{% extends "layout.html"%}
+{% block body %}
+<div class="container">
+  <h1>Login</h1>
+    <form action="{{ url_for('login') }}" method="post">
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label for="InputEmail" class="form-label">Email address</label>
+          <input type="email" name="email" class="form-control" placeholder="example@samples.com" id="inputEmail" required>
+        </div>  
+        <div class="col-md-6">
+          <label for="InputPassword" class="form-label">Password</label>
+          <input type="password" name="password" class="form-control" placeholder="password" id="InputPassword" required>
+        </div> 
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Sign in</button>
+        </div>
+      </div>
+    </form>
+</div>
+{% endblock %}

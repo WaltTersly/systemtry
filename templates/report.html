@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+{% block body %}
+<h1>REPORTS MODULE</h1>
+<div class="container">
+    <div class="row g-3">
+        <div class="col-md-6">
+            <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+                <div class="card-header text-center">Registered Users</div>
+                <div class="card-body">
+                    <h5 class="card-title text-center"> {{ user_no }} </h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h4> Users Registered :  </h4>
+            {% for user in users %}
+            <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
+                <div class="card- text-center"># {{ user.id }}</div>
+                <div class="card-body">
+                  <h5 class="card-title"> {{ user.firstname }}   {{ user.lastname }} </h5>
+                  <p class="card-text"> Email:  {{ user.email }} .</p>
+                  <p class="card-text"> Address:  {{ user.address }} .</p>
+                  <p class="card-text"> City:  {{ user.city }} .</p>
+                  <p class="card-text"> Reg_Date:  {{ user.register_date }} .</p>
+                </div>
+              </div>
+            {% endfor %}
+        </div>
+        <a href="{{ url_for('download') }}">
+            <button type="button" class="btn btn-secondary btn-lg">Download as Pdf</button>
+        </a>
+    </div>
+</div>
+{% endblock %}
